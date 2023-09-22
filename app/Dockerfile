@@ -2,11 +2,11 @@ FROM --platform=amd64 python:alpine
 
 WORKDIR /app
 
-COPY . /app
+COPY requirements.txt requirements.txt
 
 RUN --mount=type=cache,target=/root/.cache/pip \
-    pip install flask
+    pip3 install -r requirements.txt
 
-CMD [ "python", "app.py" ]
+COPY . .
 
-EXPOSE 5000
+CMD [ "python3", "-m" , "flask", "run", "--host=0.0.0.0"]

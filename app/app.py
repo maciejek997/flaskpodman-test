@@ -4,4 +4,4 @@ app = Flask(__name__)
 
 @app.route("/")
 def hello_world():
-    return "<p>EO E, oddychać moge.</p>"
+    return "<p>Kontener działa, Flask działa!</p>"
